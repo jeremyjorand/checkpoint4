@@ -10,4 +10,6 @@ export default styled.section`
   h2 {
     font-size: 10rem;
   }
+  @media screen and (max-width: 760px) {
+  }
 `;
