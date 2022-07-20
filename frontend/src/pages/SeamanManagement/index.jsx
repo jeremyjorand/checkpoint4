@@ -1,6 +1,6 @@
 import Footer from "@components/Footer";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SSeamanManagement from "./style";
 
 export default function SeamanManagement() {
@@ -30,27 +30,64 @@ export default function SeamanManagement() {
         setForm(data);
       });
   };
+  const [seamans, setSeamans] = useState([]);
+  useEffect(() => {
+    axios.get(`${import.meta.env.VITE_BACKEND_URL}/seaman`).then(({ data }) => {
+      setSeamans(data);
+    });
+  }, []);
   return (
     <SSeamanManagement>
-      <h2>Ajoute un membre d'équipage</h2>
-      <input type="text" placeholder="Nom" name="lastname" onChange={hChange} />
-      <input
-        type="text"
-        placeholder="Prénom"
-        name="firstname"
-        onChange={hChange}
-      />
-
-      <input type="text" placeholder="Poste" name="postId" onChange={hChange} />
-
-      <input
-        type="text"
-        placeholder="Avatar"
-        name="avatar"
-        onChange={hChange}
-      />
-      <input type="button" onClick={hSubmit} />
-
+      <h2>Ajoute un membre d'équipage</h2>.
+      <section className="containerTable">
+        <table>
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Prénom</th>
+              <th>Poste</th>
+            </tr>
+          </thead>
+        </table>
+        {seamans.map((seam) => (
+          <table className="seamanList">
+            <tbody>
+              <tr className="detailSeaman">
+                <td> {seam.lastname}</td>
+                <td> {seam.firstname}</td>
+                <td>{seam.label}</td>
+              </tr>
+            </tbody>
+          </table>
+        ))}
+      </section>
+      <section className="containInput">
+        <input
+          type="text"
+          placeholder="Nom"
+          name="lastname"
+          onChange={hChange}
+        />
+        <input
+          type="text"
+          placeholder="Prénom"
+          name="firstname"
+          onChange={hChange}
+        />
+        <input
+          type="text"
+          placeholder="Poste"
+          name="postId"
+          onChange={hChange}
+        />
+        <input
+          type="text"
+          placeholder="Avatar"
+          name="avatar"
+          onChange={hChange}
+        />
+        <input type="button" onClick={hSubmit} />
+      </section>
       <Footer />
     </SSeamanManagement>
   );

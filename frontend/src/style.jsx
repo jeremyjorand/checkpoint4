@@ -6,7 +6,6 @@ export default styled.div`
   background-repeat: repeat-y;
   background-size: 100vw;
   min-height: 100vh;
-  width: 100vw;
 
   @media screen and (max-width: 760px) {
     background-size: 100vw;

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export default styled.section`
-  padding-top: 10vh;
   color: white;
   min-height: 100vh;
   display: flex;
@@ -10,6 +9,7 @@ export default styled.section`
 
   h2 {
     font-size: 5rem;
+    margin-top: 10vh;
     text-align: center;
   }
   .containerSeaman {
