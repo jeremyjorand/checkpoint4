@@ -4,6 +4,8 @@ import Header from "@components/Header";
 import Seaman from "@pages/Seaman";
 import Product from "@pages/Product";
 import SignIn from "@pages/SignIn";
+import SeamanManagement from "@pages/SeamanManagement";
+import ProductManagement from "@pages/ProductManagement";
 
 import SGlobal from "./style";
 
@@ -19,6 +21,8 @@ function App() {
             <Route path="/equipage" element={<Seaman />} />;
             <Route path="/inventaire" element={<Product />} />;
             <Route path="/connexion" element={<SignIn />} />;
+            <Route path="/gestionEquipage" element={<SeamanManagement />} />;
+            <Route path="/gestionInventaire" element={<ProductManagement />} />;
           </Routes>
         </main>
       </SGlobal>

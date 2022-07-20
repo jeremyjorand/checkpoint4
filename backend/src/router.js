@@ -1,8 +1,11 @@
 const express = require("express");
 
-const { ItemController } = require("./controllers");
+const { ItemController, SeamanController } = require("./controllers");
 
 const router = express.Router();
+
+router.post("/seaman", SeamanController.add);
+router.get("/seaman", SeamanController.browse);
 
 router.get("/items", ItemController.browse);
 router.get("/items/:id", ItemController.read);

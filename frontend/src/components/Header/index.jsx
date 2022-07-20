@@ -14,9 +14,10 @@ export default function Header() {
         <Link to="/connexion">connexion</Link>
       </section>
 
-      <div
-        className={`burger ${isActive && "active"} navbarMobile`}
-        onClick={() => setActive(!isActive)}
+      <div // eslint-disable-line
+        className={`burger ${isActive && "active"} navbarMobile`} // eslint-disable-line
+        onClick={() => setActive(!isActive)} // eslint-disable-line
+        onKeyDown={() => {}} // eslint-disable-line
       >
         <span> </span>
         <ul>
