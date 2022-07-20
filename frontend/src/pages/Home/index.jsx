@@ -1,3 +1,12 @@
+import Footer from "@components/Footer";
+import SHome from "./style";
+
 export default function Home() {
-  return <header>Checkpoint 4</header>;
+  return (
+    <SHome>
+      <h2>Accueil</h2>
+
+      <Footer />
+    </SHome>
+  );
 }
