@@ -13,7 +13,7 @@ export default function ProjectPreparationHome() {
         <img src={exca} alt="maquette excalidraw" />
         <h3>Maquette Figma</h3>
         <img src={figma} alt="maquette figma" />
-        <h3>BlackLog</h3>
+        <h3>BackLog</h3>
         <img src={BL} alt="backlog" />
       </div>
       <Footer />

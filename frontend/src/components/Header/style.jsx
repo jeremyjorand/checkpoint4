@@ -54,7 +54,7 @@ export default styled.section`
         transition: background-color 2s linear, margin-left 1.5s 0.5s linear;
         margin-left: 15rem;
         width: 10rem;
-        height: 13rem;
+        height: 15rem;
         margin-top: 5.3vh;
 
         li {
@@ -102,7 +102,7 @@ export default styled.section`
       background-color: #ffffffc8;
       display: block;
       width: 10rem;
-      height: 13rem;
+      height: 15rem;
       margin-top: 5.3vh;
       margin-left: -6rem;
       transition: margin-left 1s linear;

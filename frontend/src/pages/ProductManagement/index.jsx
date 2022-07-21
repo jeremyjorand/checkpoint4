@@ -100,11 +100,12 @@ export default function ProductManagement() {
   return (
     <SProductManagement>
       <div>
-        <h2>Le garde manger</h2>
+        <h2>L'inventaire</h2>
         <section className="containerTable">
           <table>
             <thead>
               <tr key="a">
+                <th className="t0">Catégories</th>
                 <th className="t1">Nom du produit</th>
                 <th className="t2">Quantité</th>
               </tr>
@@ -114,6 +115,7 @@ export default function ProductManagement() {
             <table className="productList">
               <tbody>
                 <tr className="detailProduct" key={product.id}>
+                  <td className="t0"> {product.nameCategory}</td>
                   <td className="t1"> {product.nameProduct}</td>
                   <td className="t2"> {product.quantity}</td>
                 </tr>
@@ -123,11 +125,11 @@ export default function ProductManagement() {
         </section>
         <section className="mainProductManagement">
           <section className="left">
-            <h3>Ajoute une categorie</h3>
+            <h3>Ajoute une catégorie</h3>
             <section>
               <input
                 type="text"
-                placeholder="Non de la categorie"
+                placeholder="Nom de la catégorie"
                 name="nameCategory"
                 onChange={hChangeCateg}
               />
@@ -154,7 +156,7 @@ export default function ProductManagement() {
               >
                 <option key="a" value={false}>
                   {" "}
-                  Choisi une catégorie
+                  Choisis une catégorie
                 </option>
                 {categ.map((c) => {
                   return (
@@ -185,7 +187,7 @@ export default function ProductManagement() {
               />
             </section>
           </section>
-          {/* ////////////////////////////////////////////////////////* */}
+
           <section className="right">
             <h3>Modifie une quantité</h3>
             <section>
@@ -201,7 +203,7 @@ export default function ProductManagement() {
               >
                 <option key="a" value={false}>
                   {" "}
-                  Choisi une catégorie
+                  Choisis une catégorie
                 </option>
                 {categ.map((c) => {
                   return (
@@ -224,7 +226,7 @@ export default function ProductManagement() {
               >
                 <option key="a" value={false}>
                   {" "}
-                  Choisi un ingrédient
+                  Choisis un ingrédient
                 </option>
                 {products
                   .filter((p) => {

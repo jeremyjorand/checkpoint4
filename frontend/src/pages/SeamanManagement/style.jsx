@@ -56,18 +56,22 @@ export default styled.section`
     display: flex;
     flex-direction: column;
     height: 22rem;
-    background-color: #333;
+    background-color: #333333c4;
+    border-radius: 10px;
     width: 42vw;
 
     input {
       width: 40vw;
       height: 3rem;
       margin: auto;
+      border-radius: 10px;
     }
     select {
       width: 40vw;
       height: 3rem;
       margin: auto;
+      border-radius: 10px;
+      background-color: #fff;
     }
   }
 
@@ -85,7 +89,7 @@ export default styled.section`
       text-align: center;
     }
     .containerTable {
-      margin-top: -10rem;
+      margin-top: -5rem;
       height: 12rem;
       overflow: scroll;
       table {
@@ -140,7 +144,7 @@ export default styled.section`
       display: flex;
       flex-direction: column;
       height: 18rem;
-      background-color: #333;
+      background-color: #333333c5;
       width: 85vw;
 
       input {

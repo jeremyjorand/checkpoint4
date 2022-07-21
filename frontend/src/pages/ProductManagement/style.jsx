@@ -32,6 +32,7 @@ export default styled.section`
           width: 90%;
           margin: 0.5rem;
           height: 2rem;
+          border-radius: 10px;
         }
         .buttonLeft {
           background-color: #333;
@@ -57,12 +58,15 @@ export default styled.section`
         select {
           width: 90%;
           margin: 0.5rem;
-          height: 2rem;
+          height: 2.5rem;
+          border-radius: 10px;
+          background-color: #fff;
         }
         input {
           width: 90%;
           margin: 0.5rem;
           height: 2rem;
+          border-radius: 10px;
         }
         .buttonCenter {
           background-color: #333;
@@ -88,12 +92,15 @@ export default styled.section`
         select {
           width: 90%;
           margin: 0.5rem;
-          height: 2rem;
+          height: 2.5rem;
+          border-radius: 10px;
+          background-color: #fff;
         }
         input {
           width: 90%;
           margin: 0.5rem;
           height: 2rem;
+          border-radius: 10px;
         }
         .buttonRight {
           background-color: #333;
@@ -115,7 +122,7 @@ export default styled.section`
 
   .containerTable {
     width: 81vw;
-    height: 12rem;
+    height: 18rem;
     overflow: scroll;
     margin-top: 3rem;
     table {
@@ -127,7 +134,7 @@ export default styled.section`
         color: #fff;
         th {
           height: 2rem;
-          width: 25rem;
+          width: 30%;
           font-size: 1.5rem;
           border: #ffffff solid 1px;
         }
@@ -144,7 +151,7 @@ export default styled.section`
       }
       td {
         height: 2rem;
-        width: 25rem;
+        width: 30%;
         text-align: center;
         font-size: 1.5rem;
       }
@@ -176,7 +183,7 @@ export default styled.section`
           color: #fff;
           th {
             height: 2rem;
-            width: 50%;
+            width: 30%;
             font-size: 1.5rem;
             border: #ffffff solid 1px;
           }
@@ -193,9 +200,10 @@ export default styled.section`
         }
         td {
           height: 2rem;
-          width: 50%;
+          width: 30%;
           text-align: center;
-          font-size: 1.5rem;
+          font-size: 1.3rem;
+          padding-top: 0.3rem;
         }
 
         td {

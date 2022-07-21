@@ -48,6 +48,7 @@ export default styled.section`
         justify-content: center;
         align-items: center;
         background-color: #ffffffc8;
+        border-radius: 10px;
         color: black;
         width: 15rem;
         height: 6rem;

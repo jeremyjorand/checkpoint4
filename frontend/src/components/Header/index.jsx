@@ -12,7 +12,7 @@ export default function Header() {
 
       <section className="navbar">
         <Link to="/equipage">L'équipage</Link>
-        <Link to="/inventaire">L'inventaire</Link>
+        <Link to="/gardeManger">Le garde manger</Link>
         <Link to="/gestionEquipage">Gestion de l'équipage</Link>
         <Link to="/gestionInventaire">Gestion de l'inventaire</Link>
       </section>
@@ -28,8 +28,8 @@ export default function Header() {
             <li className="mobile">L'équipage</li>
           </Link>
 
-          <Link to="/inventaire">
-            <li className="mobile">L'inventaire</li>
+          <Link to="/gardeManger">
+            <li className="mobile">Le garde manger</li>
           </Link>
 
           <Link to="/gestionEquipage">

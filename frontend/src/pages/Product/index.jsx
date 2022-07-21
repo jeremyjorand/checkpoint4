@@ -6,7 +6,7 @@ import SProduct from "./style";
 export default function Product() {
   const [products, setProducts] = useState([]);
   const [categ, setCateg] = useState([]);
-  const [choiceCateg, setChoiceCateg] = useState(0);
+  const [choiceCateg, setChoiceCateg] = useState("0");
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/product`)
@@ -22,7 +22,7 @@ export default function Product() {
   return (
     <SProduct>
       <div>
-        <h2>L'inventaire</h2>
+        <h2>Le garde manger</h2>
         <section className="containInput ">
           <select
             value={choiceCateg}
@@ -33,9 +33,9 @@ export default function Product() {
               setChoiceCateg(e.target.value);
             }}
           >
-            <option key="a" value={false}>
+            <option key="a" value="0">
               {" "}
-              Choisi une catégorie
+              Choisis une catégorie
             </option>
             {categ.map((c) => {
               return (
@@ -59,7 +59,10 @@ export default function Product() {
           </table>
           {products
             .filter((product) => {
-              return product.categoryId === parseInt(choiceCateg); // eslint-disable-line
+              return (
+                choiceCateg === "0" ||
+                product.categoryId === parseInt(choiceCateg) // eslint-disable-line
+              );
             })
             .map((product) => (
               <table className="productList">

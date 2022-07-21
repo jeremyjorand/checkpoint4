@@ -14,15 +14,13 @@ export default styled.section`
   .containInput {
     display: flex;
     margin-top: 3rem;
-    input {
-      width: 40vw;
-      height: 3rem;
-      margin: auto;
-    }
     select {
       width: 40vw;
       height: 3rem;
       margin: auto;
+      border-radius: 10px;
+      background-color: #fff;
+      font-size: 1.2rem;
     }
   }
   .containerTable {
@@ -32,7 +30,6 @@ export default styled.section`
       margin: auto;
       thead {
         background-color: #333;
-
         color: #fff;
         th {
           height: 2rem;
@@ -64,41 +61,53 @@ export default styled.section`
     }
   }
   @media screen and (max-width: 760px) {
-    .containerTable {
-    margin-top: 3rem;
-    table {
-      width: 80vw;
-      margin: auto;
-      thead {
-        background-color: #333;
-
-        color: #fff;
-        th {
-          height: 2rem;
-          width: 50%;
-          font-size: 1.5rem;
-          border: #ffffff solid 1px;
-        }
+    .containInput {
+      display: flex;
+      margin-top: 3rem;
+      select {
+        width: 70vw;
+        height: 3rem;
+        margin: auto;
+        border-radius: 10px;
+        background-color: #fff;
       }
     }
-    .productList {
-      margin: 0;
-      width: 80vw;
-      margin: auto;
-      tbody {
-        background-color: #ffffffd5;
-        border: #333 solid 1px;
-        color: #333;
-      }
-      td {
-        height: 2rem;
-        width: 50%;
-        text-align: center;
-        font-size: 1.5rem;
-      }
+    .containerTable {
+      margin-top: 3rem;
+      table {
+        width: 90vw;
+        margin: auto;
+        thead {
+          background-color: #333;
 
-      td {
-        border: 1px solid #333;
+          color: #fff;
+          th {
+            height: 2rem;
+            width: 50%;
+            font-size: 1.5rem;
+            border: #ffffff solid 1px;
+          }
+        }
+      }
+      .productList {
+        margin: 0;
+        width: 90vw;
+        margin: auto;
+        tbody {
+          background-color: #ffffffd5;
+          border: #333 solid 1px;
+          color: #333;
+        }
+        td {
+          height: 2rem;
+          width: 50%;
+          text-align: center;
+          font-size: 1.5rem;
+        }
+
+        td {
+          border: 1px solid #333;
+        }
       }
     }
   }

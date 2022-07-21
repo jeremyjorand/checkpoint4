@@ -19,7 +19,7 @@ class SeamanManager extends AbstractManager {
 
   findAllSeaman() {
     return this.connection.query(
-      `select sm.id,sm.lastname, sm.firstname, sm.avatar, p.label from  ${SeamanManager.table} as sm inner join post as p on sm.postId = p.id`
+      `select sm.id,sm.lastname, sm.firstname, sm.avatar, p.label from  ${SeamanManager.table} as sm inner join post as p on sm.postId = p.id order by sm.lastname asc`
     );
   }
 }
