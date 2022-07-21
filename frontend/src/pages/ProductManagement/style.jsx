@@ -76,10 +76,33 @@ export default styled.section`
     .right {
       margin-top: 2rem;
       height: 20rem;
-      width: 25vw;
       border-radius: 1rem;
       border: solid 2px white;
       background-color: #333333ba;
+      width: 25vw;
+      section {
+        height: 12rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        select {
+          width: 90%;
+          margin: 0.5rem;
+          height: 2rem;
+        }
+        input {
+          width: 90%;
+          margin: 0.5rem;
+          height: 2rem;
+        }
+        .buttonRight {
+          background-color: #333;
+          color: #fff;
+          cursor: pointer;
+          border: #fff solid 1px;
+          font-size: 1rem;
+        }
+      }
     }
     h3 {
       font-size: 2rem;

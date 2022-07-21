@@ -17,7 +17,7 @@ router.get("/product", ProductController.browse);
 router.get("/category", CategoryController.browse);
 router.post("/category", CategoryController.add);
 router.post("/product", ProductController.add);
-router.put("/product/:nameProduct", ProductController.edit);
+router.put("/product/:id", ProductController.edit);
 
 router.get("/items", ItemController.browse);
 router.get("/items/:id", ItemController.read);

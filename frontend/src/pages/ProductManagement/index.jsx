@@ -7,13 +7,40 @@ export default function ProductManagement() {
   const [products, setProducts] = useState([]);
   const [categ, setCateg] = useState([]);
   const [choiceCateg, setChoiceCateg] = useState(0);
+  const [choiceProduct, setChoiceProduct] = useState(0);
 
   const [form, setForm] = useState({
     nameProduct: "",
     categoryId: "",
     quantity: "",
   });
-
+  const [formCategPut, setFormCategPut] = useState({
+    id: "",
+    quantity: "",
+  });
+  const hChangePut = (e) => {
+    const { name, value, type, files } = e.target;
+    let newValue = null;
+    switch (type) {
+      case "file":
+        [newValue] = files;
+        break;
+      default:
+        newValue = value;
+    }
+    setFormCategPut({ ...formCategPut, [name]: newValue });
+  };
+  const hSubmitPut = (evt) => {
+    evt.preventDefault();
+    axios
+      .put(
+        `${import.meta.env.VITE_BACKEND_URL}/product/${formCategPut.id}`,
+        formCategPut
+      )
+      .then(() => {
+        setFormCategPut({ id: "", quantity: "" });
+      });
+  };
   const hChange = (e) => {
     const { name, value, type, files } = e.target;
     let newValue = null;
@@ -158,8 +185,73 @@ export default function ProductManagement() {
               />
             </section>
           </section>
+          {/* ////////////////////////////////////////////////////////* */}
           <section className="right">
             <h3>Modifie une quantité</h3>
+            <section>
+              <select
+                value={choiceCateg}
+                label="text"
+                type="select"
+                name="categoryId"
+                onChange={(e) => {
+                  setChoiceCateg(e.target.value);
+                }}
+                onClick={hChangePut}
+              >
+                <option key="a" value={false}>
+                  {" "}
+                  Choisi une catégorie
+                </option>
+                {categ.map((c) => {
+                  return (
+                    <option key={c.id} value={c.id}>
+                      {c.nameCategory}
+                    </option>
+                  );
+                })}{" "}
+                ;
+              </select>
+              <select
+                value={choiceProduct}
+                label="text"
+                type="select"
+                name="id"
+                onChange={(e) => {
+                  setChoiceProduct(e.target.value);
+                }}
+                onClick={hChangePut}
+              >
+                <option key="a" value={false}>
+                  {" "}
+                  Choisi un ingrédient
+                </option>
+                {products
+                  .filter((p) => {
+                    return p.categoryId === parseInt(choiceCateg); // eslint-disable-line
+                  })
+                  .map((p) => {
+                    return (
+                      <option key={p.id} value={p.id}>
+                        {p.nameProduct}
+                      </option>
+                    );
+                  })}{" "}
+                ;
+              </select>
+              <input
+                type="text"
+                placeholder="Quantité"
+                name="quantity"
+                onChange={hChangePut}
+              />
+              <input
+                className="buttonRight"
+                type="button"
+                value="Ajouter"
+                onClick={hSubmitPut}
+              />
+            </section>
           </section>
         </section>
       </div>
