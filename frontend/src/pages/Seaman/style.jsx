@@ -12,6 +12,27 @@ export default styled.section`
     margin-top: 10vh;
     text-align: center;
   }
+  .input {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+    input {
+      width: 70vw;
+      height: 3rem;
+      border-radius: 2rem 0 0 2rem;
+      font-size: 1.5rem;
+      border: #000000 1px solid;
+      padding-left: 1.5rem;
+    }
+    button {
+      background-color: #482c04;
+      color: white;
+      width: 8vw;
+      border-radius: 0 2rem 2rem 0;
+      font-size: 1.5rem;
+      border: #000000 1px solid;
+    }
+  }
   .containerSeaman {
     display: flex;
     justify-content: space-evenly;
@@ -42,6 +63,27 @@ export default styled.section`
     }
   }
   @media screen and (max-width: 760px) {
+    .input {
+      display: flex;
+      justify-content: center;
+      margin: 1rem 0;
+      input {
+        width: 65vw;
+        height: 3rem;
+        border-radius: 2rem 0 0 2rem;
+        font-size: 1.2rem;
+        border: #000000 1px solid;
+        padding-left: 1.5rem;
+      }
+      button {
+        background-color: #482c04;
+        color: white;
+        width: 15vw;
+        border-radius: 0 2rem 2rem 0;
+        font-size: 1.5rem;
+        border: #000000 1px solid;
+      }
+    }
     .containerSeaman {
       display: flex;
       flex-direction: column;
