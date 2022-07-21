@@ -6,12 +6,15 @@ export default function Header() {
   const [isActive, setActive] = useState(false);
   return (
     <SHeader>
-      <h1>Mon navire</h1>
+      <Link to="/">
+        <h1>Mon navire</h1>
+      </Link>
+
       <section className="navbar">
-        <Link to="/">Accueil</Link>
         <Link to="/equipage">L'équipage</Link>
         <Link to="/inventaire">L'inventaire</Link>
-        <Link to="/connexion">connexion</Link>
+        <Link to="/gestionEquipage">Gestion de l'équipage</Link>
+        <Link to="/gestionInventaire">Gestion de l'inventaire</Link>
       </section>
 
       <div // eslint-disable-line
@@ -21,10 +24,6 @@ export default function Header() {
       >
         <span> </span>
         <ul>
-          <Link to="/">
-            <li className="mobile">Accueil</li>
-          </Link>
-
           <Link to="/equipage">
             <li className="mobile">L'équipage</li>
           </Link>
@@ -33,8 +32,11 @@ export default function Header() {
             <li className="mobile">L'inventaire</li>
           </Link>
 
-          <Link to="/connexion">
-            <li className="mobile">connexion</li>
+          <Link to="/gestionEquipage">
+            <li className="mobile">Gestion de l'équipage</li>
+          </Link>
+          <Link to="/gestionInventaire">
+            <li className="mobile">Gestion de l'inventaire</li>
           </Link>
         </ul>
       </div>

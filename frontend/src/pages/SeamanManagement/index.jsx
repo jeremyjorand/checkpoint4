@@ -42,7 +42,7 @@ export default function SeamanManagement() {
     axios.get(`${import.meta.env.VITE_BACKEND_URL}/post`).then(({ data }) => {
       setPosts(data);
     });
-  }, [hSubmit]);
+  }, []);
   return (
     <SSeamanManagement>
       <h2>Ajoute un membre d'équipage</h2>.

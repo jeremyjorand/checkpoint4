@@ -8,13 +8,15 @@ export default styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  h1 {
+  a {
     margin-left: 3rem;
     font-size: 4rem;
+    text-decoration: none;
+    color: black;
   }
   .navbar {
     margin: 0 3rem;
-    margin-right: -40rem;
+    margin-right: -30rem;
     a {
       margin: 0 2rem;
       text-decoration: none;
@@ -52,12 +54,11 @@ export default styled.section`
         transition: background-color 2s linear, margin-left 1.5s 0.5s linear;
         margin-left: 15rem;
         width: 10rem;
-        height: 8rem;
-        padding-top: 1rem;
+        height: 13rem;
         margin-top: 5.3vh;
 
         li {
-          margin: 0.5rem 1rem;
+          margin: 0rem 1rem;
         }
         a {
           text-decoration: none;
@@ -101,13 +102,12 @@ export default styled.section`
       background-color: #ffffffc8;
       display: block;
       width: 10rem;
-      height: 8rem;
+      height: 13rem;
       margin-top: 5.3vh;
-      padding-top: 1rem;
       margin-left: -6rem;
       transition: margin-left 1s linear;
       li {
-        margin: 0.5rem 1rem;
+        margin: 0rem 1rem;
       }
       a {
         text-decoration: none;
