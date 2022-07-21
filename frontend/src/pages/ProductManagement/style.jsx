@@ -102,6 +102,10 @@ export default styled.section`
           height: 2rem;
           border-radius: 10px;
         }
+        .inputQuantity {
+          font-size: 1.5rem;
+          text-align: center;
+        }
         .buttonRight {
           background-color: #333;
           color: #fff;

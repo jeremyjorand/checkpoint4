@@ -1,6 +1,7 @@
 import Footer from "@components/Footer";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { toast } from "react-toastify";
 import SSeamanManagement from "./style";
 
 export default function SeamanManagement() {
@@ -27,11 +28,16 @@ export default function SeamanManagement() {
   };
   const hSubmit = (evt) => {
     evt.preventDefault();
-    axios
-      .post(`${import.meta.env.VITE_BACKEND_URL}/seaman`, form)
-      .then(({ data }) => {
-        setForm(data);
-      });
+    axios.post(`${import.meta.env.VITE_BACKEND_URL}/seaman`, form);
+    toast.success("Nouveau membre enregistré", {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
   const [seamans, setSeamans] = useState([]);
   useEffect(() => {

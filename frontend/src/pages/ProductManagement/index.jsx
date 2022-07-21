@@ -1,6 +1,7 @@
 import Footer from "@components/Footer";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 import SProductManagement from "./style";
 
 export default function ProductManagement() {
@@ -32,14 +33,19 @@ export default function ProductManagement() {
   };
   const hSubmitPut = (evt) => {
     evt.preventDefault();
-    axios
-      .put(
-        `${import.meta.env.VITE_BACKEND_URL}/product/${formCategPut.id}`,
-        formCategPut
-      )
-      .then(() => {
-        setFormCategPut({ id: "", quantity: "" });
-      });
+    axios.put(
+      `${import.meta.env.VITE_BACKEND_URL}/product/${formCategPut.id}`,
+      formCategPut
+    );
+    toast.success("Quantiée modifiée", {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
   const hChange = (e) => {
     const { name, value, type, files } = e.target;
@@ -55,11 +61,16 @@ export default function ProductManagement() {
   };
   const hSubmit = (evt) => {
     evt.preventDefault();
-    axios
-      .post(`${import.meta.env.VITE_BACKEND_URL}/product`, form)
-      .then(({ data }) => {
-        setForm(data);
-      });
+    axios.post(`${import.meta.env.VITE_BACKEND_URL}/product`, form);
+    toast.success("Nouveau produit enregistré", {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
   const [formCateg, setFormCateg] = useState({
     nameCategory: "",
@@ -78,11 +89,16 @@ export default function ProductManagement() {
   };
   const hSubmitCateg = (evt) => {
     evt.preventDefault();
-    axios
-      .post(`${import.meta.env.VITE_BACKEND_URL}/category`, formCateg)
-      .then(({ data }) => {
-        setForm(data);
-      });
+    axios.post(`${import.meta.env.VITE_BACKEND_URL}/category`, formCateg);
+    toast.success("Nouvelle categorie enregisrtée", {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
 
   useEffect(() => {
@@ -241,16 +257,26 @@ export default function ProductManagement() {
                   })}{" "}
                 ;
               </select>
-              <input
-                type="text"
-                placeholder="Quantité"
-                name="quantity"
-                onChange={hChangePut}
-              />
+              {products
+                .filter((p) => {
+                  return p.id === parseInt(choiceProduct); // eslint-disable-line
+                })
+                .map((p) => {
+                  return (
+                    <input
+                      className="inputQuantity"
+                      type="text"
+                      placeholder={p.quantity}
+                      name="quantity"
+                      onChange={hChangePut}
+                    />
+                  );
+                })}
+
               <input
                 className="buttonRight"
                 type="button"
-                value="Ajouter"
+                value="Modifier"
                 onClick={hSubmitPut}
               />
             </section>
