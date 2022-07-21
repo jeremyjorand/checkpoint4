@@ -34,7 +34,7 @@ class ProductController {
 
     // TODO validations (length, format...)
 
-    product.id = parseInt(req.params.id, 10);
+    // product.id = parseInt(req.params.id, 10);
 
     models.product
       .update(product)

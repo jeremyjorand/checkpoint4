@@ -64,5 +64,42 @@ export default styled.section`
     }
   }
   @media screen and (max-width: 760px) {
+    .containerTable {
+    margin-top: 3rem;
+    table {
+      width: 80vw;
+      margin: auto;
+      thead {
+        background-color: #333;
+
+        color: #fff;
+        th {
+          height: 2rem;
+          width: 50%;
+          font-size: 1.5rem;
+          border: #ffffff solid 1px;
+        }
+      }
+    }
+    .productList {
+      margin: 0;
+      width: 80vw;
+      margin: auto;
+      tbody {
+        background-color: #ffffffd5;
+        border: #333 solid 1px;
+        color: #333;
+      }
+      td {
+        height: 2rem;
+        width: 50%;
+        text-align: center;
+        font-size: 1.5rem;
+      }
+
+      td {
+        border: 1px solid #333;
+      }
+    }
   }
 `;

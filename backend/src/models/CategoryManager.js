@@ -5,8 +5,8 @@ class CategoryManager extends AbstractManager {
 
   insert(category) {
     return this.connection.query(
-      `insert into ${CategoryManager.table} (title) values (?)`,
-      [category.title]
+      `insert into ${CategoryManager.table} (nameCategory) values (?)`,
+      [category.nameCategory]
     );
   }
 

@@ -31,8 +31,7 @@ export default function SeamanManagement() {
       .post(`${import.meta.env.VITE_BACKEND_URL}/seaman`, form)
       .then(({ data }) => {
         setForm(data);
-      })
-      .then(setForm({ lastname: "", firstname: "", avatar: "", postId: "" }));
+      });
   };
   const [seamans, setSeamans] = useState([]);
   useEffect(() => {
