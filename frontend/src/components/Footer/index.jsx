@@ -1,9 +1,12 @@
-import SHeader from "./style";
+import { Link } from "react-router-dom";
+import SFooter from "./style";
 
-export default function Header() {
+export default function Footer() {
   return (
-    <SHeader>
-      <h1>Footer</h1>
-    </SHeader>
+    <SFooter>
+      <Link to="/preparationProjet">
+        <div>Les préparations du projet</div>
+      </Link>
+    </SFooter>
   );
 }
