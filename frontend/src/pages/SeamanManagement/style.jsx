@@ -5,6 +5,7 @@ export default styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   min-height: 100vh;
 
   h2 {
@@ -13,7 +14,7 @@ export default styled.section`
     text-align: center;
   }
   .containerTable {
-    height: 10rem;
+    height: 12rem;
     overflow: scroll;
     table {
       width: 80vw;
@@ -26,6 +27,7 @@ export default styled.section`
           height: 2rem;
           width: 25rem;
           font-size: 1.5rem;
+          border: #ffffff solid 1px;
         }
       }
     }
@@ -34,8 +36,9 @@ export default styled.section`
       width: 80vw;
       margin: auto;
       tbody {
-        background-color: #333;
-        color: #fff;
+        background-color: #ffffffd5;
+        border: #333 solid 1px;
+        color: #333;
       }
       td {
         height: 2rem;
@@ -50,15 +53,106 @@ export default styled.section`
     }
   }
   .containInput {
-    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    height: 22rem;
+    background-color: #333;
+    width: 42vw;
 
     input {
       width: 40vw;
-      height: 5rem;
+      height: 3rem;
+      margin: auto;
+    }
+    select {
+      width: 40vw;
+      height: 3rem;
       margin: auto;
     }
   }
 
   @media screen and (max-width: 760px) {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+
+    h2 {
+      font-size: 3rem;
+      margin-top: 10vh;
+      text-align: center;
+    }
+    .containerTable {
+      margin-top: -10rem;
+      height: 12rem;
+      overflow: scroll;
+      table {
+        width: 90vw;
+        margin: auto;
+        thead {
+          background-color: #333;
+          color: #fff;
+          th {
+            height: 2rem;
+            font-size: 1.5rem;
+            border: #ffffff solid 1px;
+          }
+          .t1 {
+            width: 20vw;
+          }
+          .t2 {
+            width: 20vw;
+          }
+          .t3 {
+            width: 40vw;
+          }
+        }
+      }
+      .seamanList {
+        margin: 0;
+        width: 90vw;
+        margin: auto;
+        tbody {
+          background-color: #ffffffd5;
+          border: #333 solid 1px;
+          color: #333;
+        }
+        td {
+          height: 2rem;
+          text-align: center;
+          font-size: 1.2rem;
+          border: 1px solid #333;
+        }
+        .t1 {
+          width: 20vw;
+        }
+        .t2 {
+          width: 20vw;
+        }
+        .t3 {
+          width: 40vw;
+        }
+      }
+    }
+    .containInput {
+      display: flex;
+      flex-direction: column;
+      height: 18rem;
+      background-color: #333;
+      width: 85vw;
+
+      input {
+        width: 80vw;
+        height: 2rem;
+        margin: auto;
+      }
+      select {
+        width: 80vw;
+        height: 2rem;
+        margin: auto;
+      }
+    }
   }
 `;

@@ -11,6 +11,7 @@ export default function Seaman() {
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_BACKEND_URL}/seaman`).then(({ data }) => {
       setSeamans(data);
+      setDataSearch(data);
     });
   }, []);
   return (

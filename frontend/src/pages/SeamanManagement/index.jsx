@@ -4,12 +4,15 @@ import { useState, useEffect } from "react";
 import SSeamanManagement from "./style";
 
 export default function SeamanManagement() {
+  const [posts, setPosts] = useState([]);
+  const [choicePost, setChoicePost] = useState("");
   const [form, setForm] = useState({
     lastname: "",
     firstname: "",
     avatar: "",
-    postId: 0,
+    postId: "",
   });
+
   const hChange = (e) => {
     const { name, value, type, files } = e.target;
     let newValue = null;
@@ -28,34 +31,38 @@ export default function SeamanManagement() {
       .post(`${import.meta.env.VITE_BACKEND_URL}/seaman`, form)
       .then(({ data }) => {
         setForm(data);
-      });
+      })
+      .then(setForm({ lastname: "", firstname: "", avatar: "", postId: "" }));
   };
   const [seamans, setSeamans] = useState([]);
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_BACKEND_URL}/seaman`).then(({ data }) => {
       setSeamans(data);
     });
-  }, []);
+    axios.get(`${import.meta.env.VITE_BACKEND_URL}/post`).then(({ data }) => {
+      setPosts(data);
+    });
+  }, [hSubmit]);
   return (
     <SSeamanManagement>
       <h2>Ajoute un membre d'équipage</h2>.
       <section className="containerTable">
         <table>
           <thead>
-            <tr>
-              <th>Nom</th>
-              <th>Prénom</th>
-              <th>Poste</th>
+            <tr key="a">
+              <th className="t1">Nom</th>
+              <th className="t2">Prénom</th>
+              <th className="t3">Poste</th>
             </tr>
           </thead>
         </table>
         {seamans.map((seam) => (
           <table className="seamanList">
             <tbody>
-              <tr className="detailSeaman">
-                <td> {seam.lastname}</td>
-                <td> {seam.firstname}</td>
-                <td>{seam.label}</td>
+              <tr className="detailSeaman" key={seam.id}>
+                <td className="t1"> {seam.lastname}</td>
+                <td className="t2"> {seam.firstname}</td>
+                <td className="t3">{seam.label}</td>
               </tr>
             </tbody>
           </table>
@@ -76,17 +83,34 @@ export default function SeamanManagement() {
         />
         <input
           type="text"
-          placeholder="Poste"
-          name="postId"
-          onChange={hChange}
-        />
-        <input
-          type="text"
           placeholder="Avatar"
           name="avatar"
           onChange={hChange}
         />
-        <input type="button" onClick={hSubmit} />
+        <select
+          value={choicePost}
+          label="text"
+          type="select"
+          name="postId"
+          onChange={(e) => {
+            setChoicePost(e.target.value);
+          }}
+          onClick={hChange}
+        >
+          <option key="a" value={false}>
+            {" "}
+            Poste occupé
+          </option>
+          {posts.map((post) => {
+            return (
+              <option key={post.id} value={post.id}>
+                {post.label}
+              </option>
+            );
+          })}{" "}
+          ;
+        </select>
+        <input type="button" value="Envoyer" onClick={hSubmit} />
       </section>
       <Footer />
     </SSeamanManagement>
